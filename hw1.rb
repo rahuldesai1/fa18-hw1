@@ -1,23 +1,33 @@
 def squared_sum(a, b)
   # Q1 CODE HERE
-
+  (a + b) ** 2
 end
+
+squared_sum(3, 4)
 
 def sort_array_plus_one(a)
   # Q2 CODE HERE
+  a.sort.map! {|item| item + 1}
 
 end
+
+sort_array_plus_one([2, 5, 4, 2, 1])
 
 def combine_name(first_name, last_name)
   # Q3 CODE HERE
+  first_name + " " + last_name
 
 end
+
+combine_name('Rahul', 'Desai')
 
 def blockin_time(a)
   # DO NOT EDIT THIS CODE BELOW
   require './foobar'
   Foobar.baz a
 end
+
+blockin_time(['1', '2', '3', '4', '5', '10'])
 
 def scrabble(word)
   values = {
@@ -48,5 +58,12 @@ def scrabble(word)
     y: 4,
     z: 10,
   }
+  total = 0
+  word.split('').each do |item|
+  	total = total + values[item.to_sym].to_i
+  end
+  total
   # Q5 CODE HERE
 end
+
+scrabble("equestrian")
